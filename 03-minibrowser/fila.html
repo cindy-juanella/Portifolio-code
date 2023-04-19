@@ -1,0 +1,59 @@
+<script>
+    console.log('[Fila/Queue]');
+
+     // Quem entra primeiro, sai primeiro FIFO FIRST IN - FIRST OUT
+    //Qualquer tipo de dado
+    //Uma atrás da outra, ordem importa
+   
+
+    var fila = [
+        'script.js',
+        'style.css',
+        'imagem.png',
+    ];
+    //fila.push - adiciona alguém na fila por exemplo fila.push('doguinho.jpg
+    fila.push('doguinho.png')
+
+    //fila.shift() - esse comando exclue o primeiro item da lista
+    fila.shift();
+
+    //===========================
+    //Receita para criar filas
+    //=========================
+    // enqueue
+    //dequeue
+
+    class Queue{   // class: receita para criar filas
+        constructor(){ // o data é paa quando estiver criando a fila , vamos ter dados que vai ser array por padrão, e poder salvar os dados desse arrsay  
+            this.data = []; // o this é para associar na "receita" atual que estivermos criando em 15 filas, cada fila vai ser uma receita, o this aponta para a que está sendo criada no momento.
+        }
+
+        print () {
+            console.log(this.data);
+        }
+        enqueue(item) {
+            this.data.push(item)
+        }   
+
+        dequeue() {
+            this.data.fila.shift ()
+        }
+
+        }
+
+// DESIGN do codigo first
+// open closed
+//open: Aberto para extensão
+//closed: fechado para modificação
+
+
+    var requests = new Queue();
+    requests.enqueue('script.js');
+    requests.print();
+    requests.dequeue('script.js');
+    requests.enqueue('style.css');
+    requests.enqueue('imagem.png');
+    requests.enqueue('doguinho.png');
+    requests.print();
+
+</script>

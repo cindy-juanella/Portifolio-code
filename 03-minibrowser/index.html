@@ -1,0 +1,38 @@
+        
+       <!DOCTYPE html>
+       <html lang="en">
+       <head> 
+           <meta charset="UTF-8"> 
+           <meta http-equiv="X-UA-Compatible" content="IE=edge">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>Mini Browser experimental</title>
+       </head>
+       <body>
+       <script>
+
+            var aba1 =  {    // Objetos: Representa coisas com multiplos atributos pra representa-las
+                titulo: 'Titulo da aba 1',
+                url:'file:///C:/Users/Cindy/Downloads/material-3b70ca8f7418765325b005f4f11369c1_Edson%20Ifarraguirre%20Moreno%20-%20Aula%2003.pdf'
+            };
+            var aba2 =  {
+                titulo: 'Titulo da aba 2',
+                url: 'file:///C:/Users/Cindy/Desktop/codigos/03-minibrowser/index.html'
+            };
+        
+        // Arrays: Lista de coisas  - entrada    
+        const abas =[ 
+            aba1,
+            aba2
+        ];
+        // processamento
+        for(aba of abas){
+            console.log(aba.titulo);
+            //OUTPUT
+            var valorAtualDOHTML = document.body.innerHTML;
+            document.body.innerHTML = valorAtualDOHTML + `<a href = "${aba.url}">${aba.titulo}<a/>`;
+            }
+        </script>
+        <!-- <link rel='stylesheet' href='./style.css.css'/> -->
+
+       </body>
+       </html>
