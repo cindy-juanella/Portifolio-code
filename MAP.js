@@ -8,7 +8,7 @@ novoMapa.set('11/11/2011 - 23:30',{});
 novoMapa.set('11/11/2011 - 23:32',{});
 
 var resultado = novoMapa
-console.log(resultado);
+console.log(resultado); // vai aparecer somente um log de 23:30
 
 
 
