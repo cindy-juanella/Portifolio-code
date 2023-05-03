@@ -1,35 +1,27 @@
-<input placeholder="Distancia em km" id="campoDistanciaEmKm" />
-<input placeholder="Tempo em minutos" id="campoTempoEmMin"/>
-<button onclick="CalculaCorrida()">Calcula</button>
-
+<input placeholder="Distancia em KM" id="campoDistanciaEmKM" />
+<input placeholder="Tempo em minutos" id="campoTempoEmMin" />
+<button onclick="calculaCorrida()">Calcula</button>
 
 <script>
-
-    var iscampoDistanciaVacio = campoDistanciaEmKm.value == '';
-
-    if(iscampoDistanciaVacio) {
-
-        alert ('Nao temos o valor da distancia') 
+    function formataMoeda(algumValor) {
+        var valorFormatado = algumValor.toFixed(2).replace('.', ',');
+        return valorFormatado;
     }
 
-        function formataMoeda(algumValor) {
-            var valorFormatado = algumValor.toFixed(2).replace('.',',');  // retona com duas casas decimais o valor final
-            return valorFormatado;
+    function calculaCorrida() {
+        // [PROCESSAMENTO]
+        // Valida na entrada / Fail Fast Validations
+        var isCampoDistanciaVazio = campoDistanciaEmKM.value == '';    
+        if(isCampoDistanciaVazio) {
+            alert('NÃO Temos o valor da distancia') 
+            return;
         }
-
-        function CalculaCorrida(){
-            // Organizar as entradas através das variáveis e estruturar os nomes de acordo a regra de negócio
-        
+        // Organizar as entradas e aplicar a regra de negócio
         var tarifaDinamica = 1.4;
-        var distanciaEmKm = campoDistanciaEmKm.value * tarifaDinamica; // o value pega os valores dinamicos digitados no placeholder e salva
-        var tempoEmMin = campoTempoEmMin.value * 0.26; //tarifa pra tentar fazr algo mais baixo ( mas esse tipo de inf é definido por negócio Stakeholder)
-        var valorDaCorrida = distanciaEmKm + tempoEmMin;
+        var distanciaEmKM = campoDistanciaEmKM.value * tarifaDinamica;
+        var tempoEmMin = campoTempoEmMin.value * 0.26;
+        var valorDaCorrida = distanciaEmKM + tempoEmMin;
 
-        // output
-
-    alert("O valor da corrida é: " + formataMoeda(valorDaCorrida));
-
-
+        // [OUTPUT]
+        alert("O valor da corrida e: " + formataMoeda(valorDaCorrida)); // executa na hora
     }
-    
-</script>
